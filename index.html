@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heedbell — Privacy Policy</title>
+  <meta name="description" content="Official Privacy Policy for Heedbell - Offline-first subscription & trial reminder manager for Android.">
+  <meta name="theme-color" content="#1B4D3E">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231B4D3E'><path d='M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z'/></svg>">
+  <style>
+    :root {
+      --bg: #F8FAF8;
+      --card-bg: #FFFFFF;
+      --text: #19201C;
+      --text-muted: #536359;
+      --border: #E0E7E2;
+      --accent: #1E5644;
+      --accent-hover: #164032;
+      --accent-light: #E8F2EC;
+      --badge-bg: #EAF3EC;
+      --badge-text: #174E3C;
+      --shadow: 0 4px 20px -2px rgba(25, 32, 28, 0.06);
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0F1412;
+        --card-bg: #161D19;
+        --text: #EDF3EE;
+        --text-muted: #9BB0A3;
+        --border: #26332C;
+        --accent: #48A783;
+        --accent-hover: #5DB997;
+        --accent-light: #1A3127;
+        --badge-bg: #1A3127;
+        --badge-text: #66C5A2;
+        --shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+      }
+    }
+
+    [data-theme="light"] {
+      --bg: #F8FAF8;
+      --card-bg: #FFFFFF;
+      --text: #19201C;
+      --text-muted: #536359;
+      --border: #E0E7E2;
+      --accent: #1E5644;
+      --accent-hover: #164032;
+      --accent-light: #E8F2EC;
+      --badge-bg: #EAF3EC;
+      --badge-text: #174E3C;
+      --shadow: 0 4px 20px -2px rgba(25, 32, 28, 0.06);
+    }
+
+    [data-theme="dark"] {
+      --bg: #0F1412;
+      --card-bg: #161D19;
+      --text: #EDF3EE;
+      --text-muted: #9BB0A3;
+      --border: #26332C;
+      --accent: #48A783;
+      --accent-hover: #5DB997;
+      --accent-light: #1A3127;
+      --badge-bg: #1A3127;
+      --badge-text: #66C5A2;
+      --shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.65;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    header {
+      margin-bottom: 36px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 28px;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .app-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .app-logo {
+      width: 44px;
+      height: 44px;
+      background: var(--accent);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .app-name {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .controls {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-toggle {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 6px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s;
+    }
+
+    .btn-toggle:hover {
+      border-color: var(--accent);
+    }
+
+    .page-title {
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .meta-info {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .badge {
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .summary-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 40px;
+      box-shadow: var(--shadow);
+    }
+
+    .summary-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: var(--accent);
+    }
+
+    .summary-list {
+      list-style: none;
+    }
+
+    .summary-list li {
+      position: relative;
+      padding-left: 26px;
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    .summary-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .content-section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 32px;
+      box-shadow: var(--shadow);
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 32px 0 14px;
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+
+    h2:first-of-type {
+      margin-top: 0;
+    }
+
+    h3 {
+      font-size: 17px;
+      font-weight: 600;
+      margin: 22px 0 10px;
+      color: var(--text);
+    }
+
+    p {
+      margin-bottom: 14px;
+      color: var(--text);
+    }
+
+    ul, ol {
+      margin-left: 22px;
+      margin-bottom: 16px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    strong {
+      color: var(--text);
+    }
+
+    code {
+      background: var(--accent-light);
+      color: var(--accent);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-box {
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 24px;
+    }
+
+    footer {
+      text-align: center;
+      padding-top: 32px;
+      color: var(--text-muted);
+      font-size: 14px;
+      border-top: 1px solid var(--border);
+    }
+
+    .lang-block {
+      display: none;
+    }
+
+    .lang-block.active {
+      display: block;
+    }
+
+    @media (max-width: 640px) {
+      .container { padding: 20px 16px 60px; }
+      .content-section { padding: 24px 18px; }
+      .page-title { font-size: 26px; }
+      .top-bar { flex-direction: column; align-items: flex-start; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="top-bar">
+        <a href="#" class="app-brand">
+          <div class="app-logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"/>
+            </svg>
+          </div>
+          <span class="app-name">Heedbell</span>
+        </a>
+
+        <div class="controls">
+          <button class="btn-toggle" id="lang-btn" onclick="toggleLanguage()">
+            🌐 <span id="lang-label">Русский</span>
+          </button>
+          <button class="btn-toggle" id="theme-btn" onclick="toggleTheme()">
+            🌙 <span id="theme-label">Theme</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- English Header -->
+      <div class="lang-block lang-en active">
+        <h1 class="page-title">Privacy Policy</h1>
+        <p class="meta-info">Last Updated: November 1, 2026 · Effective Date: November 1, 2026</p>
+        <div class="badge-row">
+          <span class="badge">🔒 100% Offline-First</span>
+          <span class="badge">🚫 Zero Tracking & Ads</span>
+          <span class="badge">👤 No Account Required</span>
+          <span class="badge">🛡️ GDPR & CCPA Compliant</span>
+        </div>
+      </div>
+
+      <!-- Russian Header -->
+      <div class="lang-block lang-ru">
+        <h1 class="page-title">Политика конфиденциальности</h1>
+        <p class="meta-info">Дата обновления: 1 ноября 2026 г. · Вступает в силу: 1 ноября 2026 г.</p>
+        <div class="badge-row">
+          <span class="badge">🔒 Полная автономность (Offline-first)</span>
+          <span class="badge">🚫 Без аналитики и рекламы</span>
+          <span class="badge">👤 Без учётных записей</span>
+          <span class="badge">🛡️ Соответствие GDPR и CCPA</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ENGLISH CONTENT -->
+    <main class="lang-block lang-en active">
+      <div class="summary-card">
+        <div class="summary-title">Short Summary: The Privacy Promise</div>
+        <ul class="summary-list">
+          <li><strong>No Account Required:</strong> You never need to sign in or share an email address to use Heedbell.</li>
+          <li><strong>Stored Locally:</strong> All subscription details, costs, renewal dates, and notes live solely on your device in a private SQLite database.</li>
+          <li><strong>Zero Tracking or Ads:</strong> We use no third-party analytics SDKs, advertising libraries, or crash-reporting telemetry.</li>
+          <li><strong>No Backend Servers:</strong> We do not operate remote servers collecting your subscription or financial records.</li>
+          <li><strong>You Control Your Data:</strong> Export to JSON/CSV or permanently wipe all data in one tap at any time.</li>
+        </ul>
+      </div>
+
+      <div class="content-section">
+        <h2>1. Information We Do NOT Collect</h2>
+        <p>Heedbell (Application ID: <code>com.heedbell.app</code>), developed by <strong>Magicsoft Labs</strong>, is built with privacy as its primary architecture. We do not collect, transmit, or store on any external server:</p>
+        <ul>
+          <li>Personally Identifiable Information (name, email, phone number, physical address);</li>
+          <li>Banking credentials, credit card numbers, or transaction histories;</li>
+          <li>Lists of your subscriptions, amounts paid, renewal schedules, or payment notes;</li>
+          <li>Unique device fingerprints, IMEI, or Android Advertising ID (AAID);</li>
+          <li>Precise or coarse GPS location data.</li>
+        </ul>
+
+        <h2>2. Information Stored Locally on Your Device</h2>
+        <p>All information you create in Heedbell is stored inside the application's isolated local SQLite database on your device:</p>
+        <ul>
+          <li><strong>Subscription Records:</strong> Service names, selected icons/colors, prices, billing frequencies, renewal dates, and reminder intervals;</li>
+          <li><strong>Categories & Custom Labels:</strong> Categories, custom tags, payment method labels (e.g., "PayPal", "Card"), and notes;</li>
+          <li><strong>User Preferences:</strong> Theme selection (Light/Dark/AMOLED), accent colors, main currency, and notification timings;</li>
+          <li><strong>Local Backup Archives:</strong> When you perform an export, an archive file (<code>.json</code> or <code>.csv</code>) is written to a directory chosen by you via Android's Storage Access Framework (SAF).</li>
+        </ul>
+        <p>The developer has no technical access to this local database.</p>
+
+        <h2>3. Network Communications and Third-Party Services</h2>
+        <p>Heedbell requires internet access (<code>android.permission.INTERNET</code>) strictly for two optional functions:</p>
+
+        <h3>A. Foreign Exchange Rates (Multi-Currency Support)</h3>
+        <p>When tracking subscriptions across multiple currencies, Heedbell periodically downloads public exchange rates:</p>
+        <ul>
+          <li><strong>Primary API:</strong> Frankfurter API (<code>https://api.frankfurter.dev</code>)</li>
+          <li><strong>Fallback API:</strong> Currency API (<code>https://cdn.jsdelivr.net</code> / <code>https://currency-api.pages.dev</code>)</li>
+          <li><strong>Data transmitted:</strong> Standard anonymous HTTP GET requests for public rate tables (e.g. USD, EUR). <strong>No user IDs, device IDs, subscription names, or amounts are ever sent.</strong></li>
+          <li>The API hosts only receive standard HTTP request metadata (such as your IP address) necessary to return the exchange rate response.</li>
+        </ul>
+
+        <h3>B. In-App Purchases (Heedbell Pro)</h3>
+        <p>An optional one-time purchase ("Heedbell Pro") is available via official <strong>Google Play In-App Billing</strong>:</p>
+        <ul>
+          <li>Payments are handled entirely by <strong>Google LLC</strong> through Google Play Services.</li>
+          <li>We never receive or store your payment card details or billing address.</li>
+          <li>Google Play provides Heedbell with an anonymous cryptographic token confirming that the Pro license is unlocked on your device.</li>
+          <li>For more details, see the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Play Privacy Policy</a>.</li>
+        </ul>
+
+        <h3>C. External Cancellation & Service Links</h3>
+        <p>You may optionally save direct cancellation URLs for your subscriptions. Tapping "Open cancel page" opens the link in your device's default web browser.</p>
+
+        <h2>4. Device Permissions</h2>
+        <ul>
+          <li><code>POST_NOTIFICATIONS</code> (Android 13+): Displays local notifications before upcoming renewal dates and trial expirations.</li>
+          <li><code>INTERNET</code>: Fetches public foreign exchange rates and verifies Google Play purchase tokens.</li>
+          <li><code>RECEIVE_BOOT_COMPLETED</code>: Re-registers your local reminders after device reboot.</li>
+          <li><code>SCHEDULE_EXACT_ALARM</code> / Inexact battery-optimized alarms: Triggers notifications at your chosen time.</li>
+        </ul>
+
+        <h2>5. Data Retention, Portability, and Deletion</h2>
+        <ul>
+          <li><strong>Retention:</strong> Data persists solely on your phone until you delete it or remove the app.</li>
+          <li><strong>Export:</strong> Export your full database to open JSON or CSV anytime via <strong>Settings → Backup and Export</strong>.</li>
+          <li><strong>Complete Deletion:</strong> Tap <strong>Settings → Delete all data</strong> to instantly wipe all subscriptions and settings, or uninstall the app via Android system settings.</li>
+        </ul>
+
+        <h2>6. Children's Privacy</h2>
+        <p>Heedbell is a general audience productivity tool and does not knowingly collect any information from children under the age of 13 (or under 16 in the European Union).</p>
+
+        <h2>7. Compliance with GDPR and CCPA</h2>
+        <p>Under GDPR and CCPA, you have full rights to access, port, and delete your data. Because Heedbell keeps all data locally on your device, you exercise these rights directly at any time without having to submit a request.</p>
+
+        <div class="contact-box">
+          <h3>Contact Us</h3>
+          <p>If you have any questions or feedback regarding this Privacy Policy, please reach out:</p>
+          <p><strong>Developer:</strong> Magicsoft Labs<br>
+          <strong>Email:</strong> <a href="mailto:apple.developer.lab@gmail.com">apple.developer.lab@gmail.com</a></p>
+        </div>
+      </div>
+    </main>
+
+    <!-- RUSSIAN CONTENT -->
+    <main class="lang-block lang-ru">
+      <div class="summary-card">
+        <div class="summary-title">Кратко: главное о приватности</div>
+        <ul class="summary-list">
+          <li><strong>Без учётных записей:</strong> Для использования Heedbell не требуется регистрироваться или вводить email.</li>
+          <li><strong>Хранение только на устройстве:</strong> Все подписки, суммы, даты платежей и заметки хранятся исключительно в локальной базе данных SQLite на вашем смартфоне.</li>
+          <li><strong>Без аналитики и рекламы:</strong> В приложении нет сторонних трекеров, рекламных модулей и систем телеметрии.</li>
+          <li><strong>Без серверов разработчика:</strong> Мы не собираем и не храним ваши финансовые записи на удалённых серверах.</li>
+          <li><strong>Полный контроль данных:</strong> Выгрузка в JSON/CSV и полное удаление базы в один клик в любое время.</li>
+        </ul>
+      </div>
+
+      <div class="content-section">
+        <h2>1. Данные, которые мы НЕ собираем</h2>
+        <p>Приложение Heedbell (Application ID: <code>com.heedbell.app</code>), разработанное <strong>Magicsoft Labs</strong>, изначально спроектировано на принципах строгой конфиденциальности. Мы не собираем, не передаем и не храним:</p>
+        <ul>
+          <li>Персональные данные (имя, адрес электронной почты, номер телефона, физический адрес);</li>
+          <li>Данные банковских карт, счетов или реквизитов;</li>
+          <li>Списки подключенных сервисов, стоимость подписок, даты продления и заметки;</li>
+          <li>Рекламный идентификатор Android (AAID), IMEI или серийные номера оборудования;</li>
+          <li>Данные геолокации.</li>
+        </ul>
+
+        <h2>2. Данные, сохраняемые локально на вашем устройстве</h2>
+        <p>Все создаваемые вами данные сохраняются в локальной изолированной базе данных SQLite на вашем смартфоне:</p>
+        <ul>
+          <li><strong>Записи о подписках:</strong> названия сервисов, выбранные иконки и цвета, цены, периоды списания, даты продления, расписание напоминаний и сроки триалов;</li>
+          <li><strong>Категории и метки:</strong> пользовательские категории, способы оплаты (например, «Карта», «PayPal») и ссылки на отмену;</li>
+          <li><strong>Настройки:</strong> выбранная тема (светлая/тёмная/AMOLED), акцентный цвет, основная валюта и время отправки напоминаний;</li>
+          <li><strong>Резервные копии:</strong> при ручном или автоматическом экспорте файл (<code>.json</code> или <code>.csv</code>) сохраняется в выбранную вами папку через Android Storage Access Framework (SAF).</li>
+        </ul>
+        <p>Разработчик не имеет доступа к вашей локальной базе данных.</p>
+
+        <h2>3. Сетевые взаимодействия и сторонние сервисы</h2>
+        <p>Разрешение на доступ в сеть (<code>android.permission.INTERNET</code>) используется строго для двух функций:</p>
+
+        <h3>А. Загрузка курсов валют (мультивалютность)</h3>
+        <p>При ведении подписок в разных валютах Heedbell периодически загружает курсы конвертации:</p>
+        <ul>
+          <li><strong>Основной источник:</strong> Frankfurter API (<code>https://api.frankfurter.dev</code>)</li>
+          <li><strong>Запасной источник:</strong> Currency API (<code>https://cdn.jsdelivr.net</code> / <code>https://currency-api.pages.dev</code>)</li>
+          <li><strong>Что передается:</strong> стандартный анонимный HTTP GET-запрос курсов. <strong>Никакие данные пользователя, список подписок или суммы платежей в запросе не передаются.</strong></li>
+          <li>Провайдеры курсов видят только стандартный сетевой IP-адрес запроса по протоколу HTTP.</li>
+        </ul>
+
+        <h3>Б. Встроенные покупки (Heedbell Pro)</h3>
+        <p>Покупка постоянной лицензии «Heedbell Pro» осуществляется через официальный сервис <strong>Google Play In-App Billing</strong>:</p>
+        <ul>
+          <li>Все транзакции обрабатываются компанией <strong>Google LLC</strong>.</li>
+          <li>Разработчик приложения не получает и не хранит данные платёжных карт или реквизиты счетов.</li>
+          <li>Google Play передает приложению только криптографический токен, подтверждающий наличие купленной лицензии на устройстве.</li>
+          <li>Подробнее: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Политика конфиденциальности Google</a>.</li>
+        </ul>
+
+        <h3>В. Ссылки на страницы отмены</h3>
+        <p>Вы можете сохранить ссылку на управление подпиской. Нажатие на кнопку отмены открывает веб-страницу в вашем штатном браузере.</p>
+
+        <h2>4. Разрешения операционной системы Android</h2>
+        <ul>
+          <li><code>POST_NOTIFICATIONS</code> (Android 13+): показ локальных уведомлений о предстоящих списаниях и завершении триалов.</li>
+          <li><code>INTERNET</code>: получение открытых курсов валют и проверка статуса покупки в Google Play.</li>
+          <li><code>RECEIVE_BOOT_COMPLETED</code>: восстановление напоминаний после перезагрузки смартфона.</li>
+          <li><code>SCHEDULE_EXACT_ALARM</code> / неточные энергоэффективные будильники: запуск напоминаний в выбранное вами время.</li>
+        </ul>
+
+        <h2>5. Хранение, экспорт и удаление данных</h2>
+        <ul>
+          <li><strong>Хранение:</strong> Данные хранятся на вашем устройстве бессрочно до их удаления пользователем.</li>
+          <li><strong>Экспорт:</strong> Полная выгрузка базы в форматах JSON или CSV доступна в <strong>Настройки → Резервное копирование и экспорт</strong>.</li>
+          <li><strong>Полное удаление:</strong> В меню <strong>Настройки → Удалить все данные</strong> можно в один клик стереть всю информацию. Также данные удаляются при удалении приложения через настройки Android.</li>
+        </ul>
+
+        <h2>6. Защита данных несовершеннолетних</h2>
+        <p>Приложение Heedbell предназначено для широкой аудитории и осознанно не собирает информацию о детях в возрасте до 13 лет (или до 16 лет в странах ЕС).</p>
+
+        <h2>7. Соответствие регламентам GDPR и CCPA</h2>
+        <p>Поскольку Heedbell хранит все данные локально на вашем смартфоне, вы можете напрямую реализовать свои права на доступ, переносимость и удаление информации в любой момент без необходимости отправки запросов разработчику.</p>
+
+        <div class="contact-box">
+          <h3>Контакты для связи</h3>
+          <p>По любым вопросам относительно политики конфиденциальности или приложения:</p>
+          <p><strong>Разработчик:</strong> Magicsoft Labs<br>
+          <strong>Электронная почта:</strong> <a href="mailto:apple.developer.lab@gmail.com">apple.developer.lab@gmail.com</a></p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2026 Heedbell (Magicsoft Labs). All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Language Toggle Logic
+    let currentLang = 'en';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      document.querySelectorAll('.lang-block').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.add('active'));
+      
+      const label = document.getElementById('lang-label');
+      label.textContent = lang === 'en' ? 'Русский' : 'English';
+      document.documentElement.lang = lang;
+      try { localStorage.setItem('heedbell_privacy_lang', lang); } catch (e) {}
+    }
+
+    function toggleLanguage() {
+      setLanguage(currentLang === 'en' ? 'ru' : 'en');
+    }
+
+    // Theme Toggle Logic
+    let currentTheme = 'auto';
+
+    function setTheme(theme) {
+      currentTheme = theme;
+      if (theme === 'auto') {
+        document.documentElement.removeAttribute('data-theme');
+      } else {
+        document.documentElement.setAttribute('data-theme', theme);
+      }
+      const label = document.getElementById('theme-label');
+      label.textContent = theme === 'dark' ? 'Light' : 'Dark';
+      try { localStorage.setItem('heedbell_privacy_theme', theme); } catch (e) {}
+    }
+
+    function toggleTheme() {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark' || 
+        (!document.documentElement.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      setTheme(isDark ? 'light' : 'dark');
+    }
+
+    // Init from preferences (Default: English)
+    (function init() {
+      const savedLang = localStorage.getItem('heedbell_privacy_lang');
+      if (savedLang === 'ru') {
+        setLanguage('ru');
+      } else {
+        setLanguage('en');
+      }
+
+      const savedTheme = localStorage.getItem('heedbell_privacy_theme');
+      if (savedTheme) {
+        setTheme(savedTheme);
+      }
+    })();
+  </script>
+</body>
+</html>
